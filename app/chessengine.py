@@ -1,4 +1,4 @@
-# import required module
+"""# import required module
 import chess
 
 # create board object
@@ -8,4 +8,4 @@ board=chess.Board()
 print(board)
 board.push_san("e4")
 print(board)
-print(board.is_seventyfive_moves())
+print(board.is_seventyfive_moves())"""
