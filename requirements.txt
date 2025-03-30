@@ -1,3 +1,8 @@
 fastapi
 requests
 jinja2
+uvicorn
+python-chess
+python-multipart
+
+

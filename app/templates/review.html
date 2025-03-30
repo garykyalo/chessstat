@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Games</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', path='styles.css')}}" />
+</head>
+<body>
+<!-- Header Section -->
+<nav class="navbar navbar-expand-lg header sticky-top">
+    <div class="container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a
+        class="font-extrabold text-2xl hover:text-blue-300"
+        style="text-decoration: none"
+        href="/"
+      >
+        <h1>Chess Club</h1>
+      </a>
+
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li>
+            <a href="/"> <b>Home</b></a>
+          </li>
+          <li>
+            <a href="#about"><b>About Us</b></a>
+          </li>
+          <li>
+            <a href="/reviews"><b>Reviews</b></a>
+          </li>
+          <li>
+            <a href="#"><b>Our Team</b></a>
+          </li>
+          <li>
+            <a href="#"><b>Contact Us</b></a>
+          </li>
+        </ul>
+      </div>
+      <a href="https://chat.whatsapp.com/HwECIbQCoT7EZWsV6LIJYR"
+        ><button
+          class="btn btn-success px-4 py-1 rounded-full mx-5 hover:text-blue-300"
+        >
+          <b>Join Us</b>
+        </button></a
+      >
+    </div>
+  </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Chess Games for {{user | capitalize }}</h2>
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+              <tr>
+                  <th class="d-none d-md-table-cell">Date</th>
+                  <th>Time</th>
+                  <th class="d-none d-md-table-cell">Played As</th>
+                  <th class="d-none d-md-table-cell">Opponent</th>
+                  <th>Game Link</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for game in results %}
+                  <tr>
+                      <td class="d-none d-md-table-cell">{{ game.date }}</td>
+                      <td>{{ game.time }}</td>
+                      <td class="d-none d-md-table-cell">{{ game.played|capitalize }}</td>
+                      <td class="d-none d-md-table-cell">{{ game.opponent }}</td>
+                      <td><a href="{{ game.gameurl }}" target="_blank">View Game</a></td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+      
+    </div>
+</body>
+</html>

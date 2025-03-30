@@ -60,11 +60,9 @@
             <li>
               <a href="#about"><b>About Us</b></a>
             </li>
+            
             <li>
-              <a href="#"><b>Rankings</b></a>
-            </li>
-            <li>
-              <a href="/members"><b>Our Team</b></a>
+              <a href="#"><b>Our Team</b></a>
             </li>
             <li>
               <a href="#"><b>Contact Us</b></a>
@@ -127,8 +125,13 @@
           </div>
 
           <div class="text-center mt-4">
-            <a href="#contact" class="btn btn-info rounded-full px-4 py-2 mt-4"
+            <a href="#" class="btn btn-info rounded-full px-4 py-2 mt-4 mx-4"
               >Join a Tournament</a
+            >
+           
+            <a href="#" class="btn btn-info rounded-full px-4 py-2 mt-4 mx-4"
+            data-bs-toggle="modal" data-bs-target="#usernameModal"
+              >Get Game Reviews</a
             >
           </div>
         </div>
@@ -160,6 +163,24 @@
         </div>
       </div>
     </section>
+
+    <div class="modal fade" id="usernameModal" tabindex="-1" aria-labelledby="usernameModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Enter Your Chess.com Username</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="/reviews" method="post">
+              <input type="text" name="username" class="form-control" placeholder="Enter your username" required>
+              <button type="submit" class="btn btn-primary mt-2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- Services Section 
     <section id="services" class="bg-gray-200 py-20">
       <div class="container">
